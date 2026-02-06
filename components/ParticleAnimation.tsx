@@ -13,7 +13,7 @@ const ParticlesMaterial = new THREE.PointsMaterial({
 })
 
 function Particles({ count = 5000 }) {
-  const mesh = useRef<THREE.Points>(null!)
+  const mesh = useRef<THREE.InstancedMesh>(null!)
   const dummy = useMemo(() => new THREE.Object3D(), [])
 
   // Generate random positions, speeds and scales
@@ -66,7 +66,7 @@ function Particles({ count = 5000 }) {
   })
 
   return (
-    <instancedMesh ref={mesh} args={[undefined, undefined, count]} material={ParticlesMaterial}>
+    <instancedMesh ref={mesh} args={[null as any, null as any, count]} material={ParticlesMaterial}>
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" count={positions.length / 3} array={positions} itemSize={3} />
         <bufferAttribute attach="attributes-scale" count={scales.length} array={scales} itemSize={1} />

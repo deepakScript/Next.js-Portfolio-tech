@@ -51,7 +51,7 @@ export default function Home() {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -67,7 +67,7 @@ export default function Home() {
   if (!mounted) return null
   if (loading) return <Loading />
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const { name, email, message } = formData;
 
@@ -338,7 +338,7 @@ export default function Home() {
   )
 }
 
-function ServiceCard({ icon, title, description }) {
+function ServiceCard({ icon, title, description }: any) {
   return (
     <div className="p-6 rounded-lg bg-gray-900 border border-gray-800 hover:border-purple-500 transition-all duration-300 text-center md:text-left">
       <div className="mb-4 flex justify-center md:justify-start">{icon}</div>
@@ -348,14 +348,14 @@ function ServiceCard({ icon, title, description }) {
   )
 }
 
-const ProjectCard = ({ title, description, tags, image, site, url }) => {
+const ProjectCard = ({ title, description, tags, image, site, url }: any ) => {
   return (
     <div className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
       <img src={image} alt={title} className="w-full h-48 object-cover rounded-md mb-4" />
       <h3 className="text-xl font-bold text-white">{title}</h3>
       <p className="text-gray-400 mt-2">{description}</p>
       <div className="flex flex-wrap mt-4">
-        {tags.map((tag, index) => (
+        {tags.map((tag: any, index: any) => (
           <span
             key={index}
             className="bg-purple-600 text-white text-xs font-semibold px-2 py-1 rounded-full mr-2 mb-2"

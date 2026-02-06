@@ -56,7 +56,7 @@ const ParticleBackground = () => {
           width: 1,
         },
         move: {
-          direction: "none",
+          direction: "none" as const,
           enable: true,
           outModes: {
             default: "bounce",
@@ -83,11 +83,11 @@ const ParticleBackground = () => {
         },
       },
       detectRetina: true,
-    }),
+    } as const),
     [],
   )
 
-  return <Particles id="tsparticles" init={particlesInit} options={options} className="absolute inset-0" />
+  return <Particles id="tsparticles" init={particlesInit} options={options as any} className="absolute inset-0" />
 }
 
 export default ParticleBackground
