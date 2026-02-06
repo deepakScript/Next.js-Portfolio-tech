@@ -7,10 +7,10 @@ import { Calendar, MapPin, Building2 } from "lucide-react"
 const timelineData = [
   {
     id: 1,
-    company: "SMIT",
+    company: "",
     role: "Full Stack Developer",
     period: "2025 - Present",
-    location: "Karachi, Pakistan",
+    location: "",
     type: "Full-time",
     logo: "https://smitadvisor.vercel.app/logo.png",
     skills: ["JavaScript", "React", "Node.js","MongoDB","Express.js",],
